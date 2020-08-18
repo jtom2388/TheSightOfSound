@@ -24,7 +24,7 @@ $(document).ready(function () {
        .data(frequencyData)
        .enter()
        .append('rect')
-       .attr('x', function (d, i) {
+       .attr('x', function (i) {
           return i * (svgWidth / frequencyData.length);
        })
        .attr('width', svgWidth / frequencyData.length - barPadding);
