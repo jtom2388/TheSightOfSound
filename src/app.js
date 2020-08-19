@@ -14,8 +14,14 @@ $(document).ready(function () {
    var svgWidth = '1200';
    var barPadding = '1';
 
+   document.querySelector('button').addEventListener('click', function() {
+      audioCtx.resume().then(() => {
+        console.log('Playback resumed successfully');
+      });
+   });
+
    function createSvg(parent, height, width) {
-   return d3.select(parent).append('svg').attr('height', height).attr('width', width);
+      return d3.select(parent).append('svg').attr('height', height).attr('width', width);
    }
 
    var svg = createSvg('body', svgHeight, svgWidth);
